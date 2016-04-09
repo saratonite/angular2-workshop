@@ -1,4 +1,4 @@
-System.register(['angular2/core', './components/navigation.component'], function(exports_1) {
+System.register(['angular2/core'], function(exports_1) {
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
         var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
         if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -8,33 +8,30 @@ System.register(['angular2/core', './components/navigation.component'], function
     var __metadata = (this && this.__metadata) || function (k, v) {
         if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
     };
-    var core_1, navigation_component_1;
-    var AppComponent;
+    var core_1;
+    var NavigationComponent;
     return {
         setters:[
             function (core_1_1) {
                 core_1 = core_1_1;
-            },
-            function (navigation_component_1_1) {
-                navigation_component_1 = navigation_component_1_1;
             }],
         execute: function() {
-            AppComponent = (function () {
-                function AppComponent() {
-                    this.name = "World";
+            NavigationComponent = (function () {
+                function NavigationComponent() {
+                    this.title = "Awesome Angular";
+                    this.links = [{ 'title': 'Home', 'path': '/' }, { 'title': 'About', 'path': '/about' }];
                 }
-                AppComponent = __decorate([
+                NavigationComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        template: '<div><h1>Hello {{name}}</h1><navigation></navigation></div>',
-                        directives: [navigation_component_1.NavigationComponent]
+                        selector: "navigation",
+                        template: "<ul>\n    <li>{{title}}</li>\n    <li *ngFor=\"#link of links\"><a href=\"{{link.path}}\">{{link.title}}</a></li>\n  </ul>"
                     }), 
                     __metadata('design:paramtypes', [])
-                ], AppComponent);
-                return AppComponent;
+                ], NavigationComponent);
+                return NavigationComponent;
             })();
-            exports_1("AppComponent", AppComponent);
+            exports_1("NavigationComponent", NavigationComponent);
         }
     }
 });
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=navigation.component.js.map
