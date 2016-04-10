@@ -1,9 +1,13 @@
 import {Component} from 'angular2/core';
 import {NavigationComponent} from './components/navigation.component'
+import {PageComponent} from './components/page.component'
 @Component({
     selector: 'my-app',
-    template: '<div><h1>Hello {{name}}</h1><navigation></navigation></div>',
-    directives:[NavigationComponent]
+    template: `<div>
+      <navigation></navigation>
+      <page></page>
+      </div>`,
+    directives:[NavigationComponent,PageComponent]
 })
 
 export class AppComponent {

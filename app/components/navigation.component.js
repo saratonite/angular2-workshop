@@ -19,12 +19,13 @@ System.register(['angular2/core'], function(exports_1) {
             NavigationComponent = (function () {
                 function NavigationComponent() {
                     this.title = "Awesome Angular";
+                    this.appName = "angular2-workshop";
                     this.links = [{ 'title': 'Home', 'path': '/' }, { 'title': 'About', 'path': '/about' }];
                 }
                 NavigationComponent = __decorate([
                     core_1.Component({
                         selector: "navigation",
-                        template: "<ul>\n    <li>{{title}}</li>\n    <li *ngFor=\"#link of links\"><a href=\"{{link.path}}\">{{link.title}}</a></li>\n  </ul>"
+                        template: "\n            <nav class=\"navbar navbar-default\">\n            <div class=\"navbar-header\">\n            <button type=\"button\" class=\"navbar-toggle collapsed\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\" aria-expanded=\"false\">\n              <span class=\"sr-only\">Toggle navigation</span>\n              <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n              <span class=\"icon-bar\"></span>\n            </button>\n            <a class=\"navbar-brand\" href=\"#\">{{appName}}</a>\n          </div>\n            <ul class=\"nav navbar-nav\">\n                <li *ngFor=\"#link of links\"><a href=\"{{link.path}}\">{{link.title}}</a></li>\n            </ul>\n            </nav>"
                     }), 
                     __metadata('design:paramtypes', [])
                 ], NavigationComponent);
